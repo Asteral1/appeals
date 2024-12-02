@@ -8,7 +8,12 @@ const app = express();
 const PORT = 3000;
 
 // Middleware to serve static files (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route for the HTML page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
