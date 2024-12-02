@@ -10,42 +10,65 @@
     <div class="container">
         <header>
             <h1>Discord Appeal Form</h1>
-            <p>Appeal a ban, mute, or any other moderation action.</p>
+            <p>Use this form to appeal a ban, mute, kick, or other moderation action on our Discord server.</p>
         </header>
         <form id="appealForm">
+            <!-- Discord Username -->
             <div class="form-group">
-                <label for="discordUsername">Discord Username (with tag)</label>
-                <input type="text" id="discordUsername" name="discordUsername" placeholder="Example#1234" required>
+                <label for="discordUsername">Discord Username (with tag) <span>*</span></label>
+                <input type="text" id="discordUsername" name="discordUsername" 
+                       placeholder="Example#1234" 
+                       pattern=".*#\d{4}" 
+                       title="Please enter a valid Discord username with a tag (e.g., Example#1234)" 
+                       required>
             </div>
+
+            <!-- Action Type -->
             <div class="form-group">
-                <label for="actionType">What are you appealing?</label>
+                <label for="actionType">What are you appealing? <span>*</span></label>
                 <select id="actionType" name="actionType" required>
-                    <option value="">Select an action</option>
+                    <option value="" disabled selected>Select an action</option>
                     <option value="ban">Ban</option>
                     <option value="mute">Mute</option>
                     <option value="kick">Kick</option>
                     <option value="other">Other</option>
                 </select>
             </div>
+
+            <!-- Reason -->
             <div class="form-group">
-                <label for="reason">Why were you banned/muted?</label>
-                <textarea id="reason" name="reason" rows="3" placeholder="Explain what happened..." required></textarea>
+                <label for="reason">Why were you banned/muted? <span>*</span></label>
+                <textarea id="reason" name="reason" rows="4" 
+                          placeholder="Explain what happened and why the action was taken against you..." 
+                          required></textarea>
             </div>
+
+            <!-- Apology/Explanation -->
             <div class="form-group">
-                <label for="apology">Why should we consider your appeal?</label>
-                <textarea id="apology" name="apology" rows="4" placeholder="Write a sincere apology or explanation." required></textarea>
+                <label for="apology">Why should we consider your appeal? <span>*</span></label>
+                <textarea id="apology" name="apology" rows="5" 
+                          placeholder="Provide a detailed explanation or sincere apology..." 
+                          required></textarea>
             </div>
+
+            <!-- Timestamp -->
             <div class="form-group">
-                <label for="timestamp">When did this action happen?</label>
+                <label for="timestamp">When did this action happen? <span>*</span></label>
                 <input type="datetime-local" id="timestamp" name="timestamp" required>
             </div>
+
+            <!-- Evidence Upload -->
             <div class="form-group">
-                <label for="evidence">Upload any evidence (optional)</label>
+                <label for="evidence">Upload any supporting evidence (optional)</label>
                 <input type="file" id="evidence" name="evidence" accept="image/*,video/*">
             </div>
-            <button type="submit" class="submit-btn">Submit Appeal</button>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Appeal</button>
+            </div>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
