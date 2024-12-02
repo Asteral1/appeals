@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Appeal Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Discord Appeal Form</h1>
+            <p>Appeal a ban, mute, or any other moderation action.</p>
+        </header>
+        <form id="appealForm">
+            <div class="form-group">
+                <label for="discordUsername">Discord Username (with tag)</label>
+                <input type="text" id="discordUsername" name="discordUsername" placeholder="Example#1234" required>
+            </div>
+            <div class="form-group">
+                <label for="actionType">What are you appealing?</label>
+                <select id="actionType" name="actionType" required>
+                    <option value="">Select an action</option>
+                    <option value="ban">Ban</option>
+                    <option value="mute">Mute</option>
+                    <option value="kick">Kick</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="reason">Why were you banned/muted?</label>
+                <textarea id="reason" name="reason" rows="3" placeholder="Explain what happened..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="apology">Why should we consider your appeal?</label>
+                <textarea id="apology" name="apology" rows="4" placeholder="Write a sincere apology or explanation." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="timestamp">When did this action happen?</label>
+                <input type="datetime-local" id="timestamp" name="timestamp" required>
+            </div>
+            <div class="form-group">
+                <label for="evidence">Upload any evidence (optional)</label>
+                <input type="file" id="evidence" name="evidence" accept="image/*,video/*">
+            </div>
+            <button type="submit" class="submit-btn">Submit Appeal</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
