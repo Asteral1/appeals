@@ -1,0 +1,28 @@
+# Site settings
+title: Your Site Title
+description: A description of your site
+url: "https://upload-files.github.io" # The base URL for your GitHub Pages site
+baseurl: "" # No base URL, so it serves from the root
+
+# Build settings
+markdown: kramdown
+theme: minima # Default theme for Jekyll, you can change this to any other supported theme
+
+# Plugins
+plugins:
+  - jekyll-feed # Optional, for generating RSS feed
+  - jekyll-seo-tag # Optional, for adding SEO meta tags
+
+# Exclude these files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Enable syntax highlighting
+highlighter: rouge
+
+# GitHub Pages settings
+github:
+  is_project_page: true # Set to false since this is a user/organization site
